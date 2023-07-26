@@ -8,13 +8,11 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
   - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 # 📖 [Vet clinic database] <a name="about-project"></a>

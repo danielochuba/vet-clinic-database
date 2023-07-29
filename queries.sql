@@ -88,3 +88,68 @@ LEFT JOIN animals ON owners.id = animals.owner_id
 GROUP BY owners.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
+
+
+
+SELECT a.name AS last_animal_seen
+FROM animals a
+INNER JOIN visits v ON a.id = v.animals_id
+INNER JOIN vets vt ON v.vets_id = vt.id
+WHERE vt.name = 'William Tatcher'
+ORDER BY v.date_of_visit DESC
+LIMIT 1;
+
+SELECT COUNT(DISTINCT v.animals_id) AS num_different_animals_seen
+FROM visits v
+INNER JOIN vets vt ON v.vets_id = vt.id
+WHERE vt.name = 'Stephanie Mendez';
+
+SELECT vt.name AS vet_name, s.species_id AS specialty
+FROM vets vt
+LEFT JOIN specializations s ON vt.id = s.vets_id;
+
+SELECT a.name AS animal_name, v.date_of_visit
+FROM animals a
+INNER JOIN visits v ON a.id = v.animals_id
+INNER JOIN vets vt ON v.vets_id = vt.id
+WHERE vt.name = 'Stephanie Mendez'
+AND v.date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT a.name AS animal_name, COUNT(v.animals_id) AS num_visits
+FROM animals a
+INNER JOIN visits v ON a.id = v.animals_id
+GROUP BY a.id
+ORDER BY num_visits DESC
+LIMIT 1;
+
+SELECT a.name AS animal_name, v.date_of_visit
+FROM animals a
+INNER JOIN visits v ON a.id = v.animals_id
+INNER JOIN vets vt ON v.vets_id = vt.id
+WHERE vt.name = 'Maisy Smith'
+ORDER BY v.date_of_visit ASC
+LIMIT 1;
+
+SELECT a.name AS animal_name, vt.name AS vet_name, v.date_of_visit
+FROM animals a
+INNER JOIN visits v ON a.id = v.animals_id
+INNER JOIN vets vt ON v.vets_id = vt.id
+ORDER BY v.date_of_visit DESC
+LIMIT 1;
+
+SELECT COUNT(*) AS num_visits_no_specialty
+FROM visits v
+INNER JOIN animals a ON v.animals_id = a.id
+INNER JOIN vets vt ON v.vets_id = vt.id
+LEFT JOIN specializations s ON vt.id = s.vets_id AND a.species_id = s.species_id
+WHERE s.species_id IS NULL;
+
+SELECT a.species_id, species.name, COUNT(*) AS num_visits
+FROM animals a
+INNER JOIN visits v ON a.id = v.animals_id
+INNER JOIN vets vt ON v.vets_id = vt.id
+INNER JOIN species ON a.species_id = species.id
+WHERE vt.name = 'Vet Maisy Smith'
+GROUP BY a.species_id, species.name
+ORDER BY num_visits DESC
+LIMIT 1;

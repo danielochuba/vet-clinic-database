@@ -70,6 +70,10 @@ it clone https://github.com/danielochuba/vet-clinic-database.git
 - Twitter: [@ochuba_daniel](https://twitter.com/ochuba_daniel)
 - LinkedIn: [Daniel Ochuba](https://www.linkedin.com/in/daniel-ochuba-ugochukwu)
 
+- 👤 **Sebastian Hernandez**
+- GitHub: [@shm04](https://github.com/shm04)
+- LinkedIn: [Sebastian Hernandez](https://www.linkedin.com/in/sebastian-hernandez-munoz/)
+
 
 <!-- FUTURE FEATURES -->
 
